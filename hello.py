@@ -19,9 +19,9 @@ label.pack()
 #label1.pack(side =tk.LEFT) #Le puedes decir donde ponerla
 
 
-valor_nombre = tk.StringVar() # es una clase que va ser una variable de control get()-saber valor y set()
+valor_nombre = tk.StringVar() # es una clase que va ser una variable de control// get()-saber valor y set()
 
-nombre = tk.Entry(root, textvariable = valor_nombre) #sirve para generar una barra en la que puedes escribir
+nombre = tk.Entry(root, textvariable = valor_nombre) # Entry sirve para generar una barra en la que puedes escribir - textvariable cada vez que cambie el valor del nombre cambaira el valor automaticamente
 nombre.pack()
 
 boton = tk.Button(root,text = "Pulsame",command =imprimir_saludo ) #comand funcion que se va llmar cada vez que se aga click en el boton
