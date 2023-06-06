@@ -13,3 +13,13 @@ class Display(tk.Frame):                            #se crea un frame (un conten
 
     def typing(self,text):
         self.label.config(text=text) #definimos el texto que vamos a meter
+
+class CalcButton(tk.Frame):
+    def __init__(self,location,tiny_wire,text):
+        super().__init__(location, width=68,height=50)
+        self.pack_propagate(False)
+        self.button = tk.Button(self, text=text,command=tiny_wire)
+        self.button.pack(side = tk.TOP, fill=tk.BOTH, expand=True)
+
+
+   
