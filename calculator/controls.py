@@ -17,8 +17,30 @@ class CalcButton(tk.Frame):
     def __init__(self,location,tiny_wire,text):
         super().__init__(location, width=68,height=50)
         self.pack_propagate(False)
-        self.button = tk.Button(self, text=text,command=tiny_wire)
+        self.tiny_wire = tiny_wire
+        self.text = text
+        self.button = tk.Button(self, text=text,command=self.pressed)
         self.button.pack(side = tk.TOP, fill=tk.BOTH, expand=True)
+
+    def pressed(self):
+        self.tiny_wire(self.text)
+
+class KeyBoard(tk.Frame):
+    def __init__(self,location,tiny_wire):
+        super().__init__(location,width=272,height=250)
+        CalcButton(self,tiny_wire,"AC").grid(column=0,row=0,columnspan=3,sticky="WE")
+        CalcButton(self,tiny_wire,"÷").grid(column=3,row=0)
+        CalcButton(self,tiny_wire,"C").grid(column=0,row=1)
+        CalcButton(self,tiny_wire,"D").grid(column=1,row=1)
+        CalcButton(self,tiny_wire,"M").grid(column=2,row=1,rowspan=3,sticky="NS")
+        CalcButton(self,tiny_wire,"X").grid(column=0,row=2)
+        CalcButton(self,tiny_wire,"x").grid(column=3,row=1)
+        CalcButton(self,tiny_wire,"L").grid(column=1,row=2)
+        CalcButton(self,tiny_wire,"-").grid(column=3,row=2)
+        CalcButton(self,tiny_wire,"I").grid(column=0,row=3)
+        CalcButton(self,tiny_wire,"V").grid(column=1,row=3)
+        CalcButton(self,tiny_wire,"+").grid(column=3,row=3)
+        CalcButton(self,tiny_wire,"=").grid(column=0,row=4,columnspan=4,sticky="EW")
 
 
    
