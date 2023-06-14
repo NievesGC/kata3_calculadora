@@ -63,6 +63,8 @@ def entero_a_romano(n_int):
 
    if n_int > 3999:
       raise RomanNumberError("El número debe ser inferior a 4000")
+   elif n_int < 0:
+      raise RomanNumberError("El número debe ser positivo")
 
    digitos = listar_numero(n_int)  #3000,500,50,6
    
